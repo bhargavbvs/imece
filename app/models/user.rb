@@ -1,22 +1,19 @@
-class User
-
+class User < MongoModel
   # {
-  #   id: "UQzgoFLBfdnHR8CK",
+  #   uuid: "UQzgoFLBfdnHR8CK",
   #   name: "Riyaz Bro",
   #   about: "Sample Description",
   #   dob: "1992-08-09",
   #   email: "mohammedriyaz.mdr@gmail.com",
   #   phone: "9967829993",
-  #   password_digest: ""
+  #   password: "123456",
+  #   password_confirmation: "123456",
   #   city: "BH0XXPpSVxpmkN5R",
-  #   created_at: "1467793011"
+  #   created_at: 1467793011,
   #   locality: "yEpzX9Yhk8WTK6ZS"
   # }
-
-  has_secure_password
-  
-  include Mongoid::Document
-  field :id, type: String
+  include ActiveModel::SecurePassword
+  field :uuid, type: String
   field :name, type: String
   field :about, type: String
   field :dob, type: String
@@ -26,6 +23,8 @@ class User
   field :city, type: String
   field :locality, type: String
   field :created_at, type: Date
+
+  has_secure_password
 
 
 end
