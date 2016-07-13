@@ -15,7 +15,7 @@ module RssFeedHelper
   end
 
   def get_feed
-    url = 'https://news.google.com/news/section?cf=all&hl=en&ned=in&scoring=n&num=100&geo=bangalore&output=rss'
+    url = 'https://news.google.com/news?cf=all&hl=en&ned=in&geo=bangalore&output=rss'
     title = nil
     results = []
     open(url) do |rss|
